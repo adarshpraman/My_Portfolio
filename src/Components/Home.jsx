@@ -58,7 +58,7 @@ const Home = () => {
             </Link>
 
             <a
-              href="https://drive.google.com/file/d/1QWMO2wJeG10_ksPyk8YMxDPCK9Dk0uwq/view?usp=sharing"
+              href="https://drive.google.com/file/d/1XLn7jKh87sJdY-nzNOpBT53VkV8DPQLr/view?usp=sharing"
               className="group text-white w-fit px-6 py-3 my-2 flex items-center rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer hover:scale-105 transition-transform duration-300"
             >
               Download CV
