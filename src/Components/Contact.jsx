@@ -1,6 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    window.location.href =
+      "mailto:adarshpraman@gmail.com?subject=" +
+      formData.subject +
+      "&body=" +
+      formData.message;
+  };
+
   return (
     <div
       name="contact"
@@ -34,31 +56,28 @@ const Contact = () => {
           </div>
 
           <div className="w-full md:w-1/2">
-            <form
-              action="https://getform.io/f/pamqnkma"
-              method="POST"
-              className="flex flex-col w-full "
-            >
+            <form onSubmit={handleSubmit} className="flex flex-col w-full ">
               <input
                 type="text"
-                name="name"
-                placeholder="Enter your name"
-                className="p-2 mb-4 bg-transparent border-2 rounded-md text-white focus:outline-none"
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Enter your email"
+                name="subject"
+                placeholder="Enter subject"
+                value={formData.subject}
+                onChange={handleChange}
                 className="p-2 mb-4 bg-transparent border-2 rounded-md text-white focus:outline-none"
               />
               <textarea
                 name="message"
                 placeholder="Enter your message"
                 rows="6"
+                value={formData.message}
+                onChange={handleChange}
                 className="p-2 mb-4 bg-transparent border-2 rounded-md text-white focus:outline-none"
               ></textarea>
 
-              <button className="text-white bg-gradient-to-b from-cyan-500 to-blue-500 px-6 py-3 mx-auto md:mx-0 flex items-center justify-center rounded-md hover:scale-105 duration-300">
+              <button
+                type="submit"
+                className="text-white bg-gradient-to-b from-cyan-500 to-blue-500 px-6 py-3 mx-auto md:mx-0 flex items-center justify-center rounded-md hover:scale-105 duration-300"
+              >
                 Let's talk
               </button>
             </form>
