@@ -26,7 +26,7 @@ const Contact = () => {
               <p className="mb-6">Giridih, Jharkhand</p>
               <p className="font-semibold">Contact Number:</p>
               <p className="mb-6">
-                <a href="callto:+918210012360" className="hover:text-gray-400">
+                <a href="tel:+918210012360" className="hover:text-gray-400">
                   +91 8210XXXXXX
                 </a>
               </p>
